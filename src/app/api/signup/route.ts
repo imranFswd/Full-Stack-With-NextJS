@@ -44,7 +44,7 @@ export async function POST(request: Request) {
 
         if (existingUserByEmail) {
             
-            if (existingUserVerifiedByUsername) {
+            if (existingUserByEmail.isVerified) {
                 
                 return Response.json({
                     success:false,
@@ -72,6 +72,7 @@ export async function POST(request: Request) {
 
                 
             }
+
 
         } else {
 
